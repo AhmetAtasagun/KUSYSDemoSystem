@@ -1,0 +1,41 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* ================ LOGIN PAGE ================ */
+.login-main {
+    height: 500px;
+    border-radius: 60px;
+    box-shadow: 5px 5px 70px 0px #dfdfdf;
+    margin-top: 15vh;
+}
+
+    .login-main > form:nth-child(1) {
+        border-right: 1px solid #dddddd;
+    }
+
+@media only screen and (max-width: 768px) {
+    .login-main {
+        height: 600px;
+    }
+
+        .login-main > form:nth-child(1) {
+            border-right: none;
+        }
+}
+/* ================ LOGIN PAGE END ================ */

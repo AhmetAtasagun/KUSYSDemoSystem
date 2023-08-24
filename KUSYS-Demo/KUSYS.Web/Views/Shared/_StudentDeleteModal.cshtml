@@ -1,0 +1,20 @@
+﻿<div class="modal fade" id="studentDeleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="studentDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete the student?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form method="get" action="/Student/Delete">
+                    <input type="hidden" id="deleteStudentId" name="Id" />
+                    <input type="submit" class="btn btn-danger" id="deleteConfirm" value="Delete" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

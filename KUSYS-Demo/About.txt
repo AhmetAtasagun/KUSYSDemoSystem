@@ -1,0 +1,31 @@
+
+	AÇIKLAMALAR
+* Proje arayüzünde hazır tema vs. kullanılmadı. Bootstrap componentlerinden faydalanarak hazırlanmıştır.
+* Case dökümanında isterler rol üzerinden belirtildiğinden ve dar zaman aralığından dolayı, izinlere girmeden rol bazlı yetkilendirme kullanılmıştır.
+* Projeyi çalıştırmadan önce connection string adresini değiştirerek migration yapmayı unutmayın!
+
+
+--------- Sayfalar ---------
+# Login / Register
+	İkisi birlikte aynı sayfadalar
+
+# Öğrenciler Sayfası 
+	Tek sayfa üzerinden yönetiliyor.
+	Listedeki Her bir öğrenci kaydı için detay, güncelle, sil butonları mevcut.
+	Öğrenci ekle butonu mevcut.
+	Yetkiye göre; Eğer Kullanıcı ise Öğrenci ekle, güncelle, sil butonları görünmüyor. Admin ise hepsi görünüyor.
+
+# Kurslar Sayfası
+	Tek sayfa üzerinden görüntüleniyor.
+	Kurslar ve kurslara katılan kayıtlı öğrencilerin olduğu liste görünüyor.
+	Sayfa yalnızca Admin rol yetkisine sahip kullanıcılara görüntülenebilir.	
+
+# Kullanıcılar Sayfası
+	Kullanıcıları Listeleme
+	Ekleme, Çıkarma, Silme (Zamandan dolayı Aktif değil)
+	Rol ekleme (Zamandan dolayı Aktif değil)
+	Sayfa yalnızca Admin rol yetkisine sahip kullanıcılara görüntülenebilir.
+
+
+Kodlar yeterince kısa ve anlaşılır olduğunda her bir yere ayrı ayrı açıklama yazmadım. 
+Kafada soru işareti bırakan noktaları birlikte değerlendirebiliriz.

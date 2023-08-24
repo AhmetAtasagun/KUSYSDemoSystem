@@ -1,0 +1,65 @@
+﻿@page
+@model KUSYS.Web.Pages.LoginModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Login & Register - KUSYS";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KUSYS.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KUSYS.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="d-flex flex-column justify-content-between" style="height: 90vh;">
+        <div class="container">
+            <main role="main" class="d-flex flex-column flex-sm-column flex-md-row  justify-content-around border py-5 login-main">
+                <form class="d-flex flex-column input-group">
+                    <div class="d-flex flex-column align-items-center m-5">
+                        <h3 class="m-2">Login</h3>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="usernametext">&#128102;</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="usernametext">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="passwordtext">&#128272;</span>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="passwordtext">
+                        </div>
+                        <input type="submit" value="Login" class="form-control w-50 mt-2 btn btn-outline-primary" />
+                    </div>
+                </form>
+                <form class="d-flex flex-column input-group">
+                    <div class="d-flex flex-column align-items-center m-5">
+                        <h3 class="m-2">Register</h3>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="usernametext">&#128102;</span>
+                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="usernametext">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="passwordtext">&#128272;</span>
+                            <input type="password" class="form-control" placeholder="Password Confirm" aria-label="Password" aria-describedby="passwordtext">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="passwordtext">&#128272;</span>
+                            <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="passwordtext">
+                        </div>
+                        <input type="submit" value="Register" class="form-control w-50 mt-2 btn btn-outline-success" />
+                    </div>
+                </form>
+            </main>
+        </div>
+
+        <footer class="border-top footer text-muted">
+            <div class="container mt-4">
+                &copy; 2023 - KUSYS Demo Course Management System (for Case)
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿@using KUSYS.Core.Models.Response;
+@model List<UserResponse>
+@{
+}
+<h3>User List</h3>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>UserName</th>
+            <th>Role</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Id</td>
+                <td>@user.Username</td>
+                <td>@user.Role.Name</td>
+                <td>
+                    <button>A</button>
+                    <button>B</button>
+                    <button>C</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

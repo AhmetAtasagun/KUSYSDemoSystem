@@ -1,0 +1,50 @@
+﻿@using KUSYS.Core.Models.Response;
+@using KUSYS.Web.Infrastructure;
+@model List<UserResponse>
+@{
+    ViewData["Title"] = "Users - KUSYS";
+}
+
+@if (Context.GetAuthUser().IsAuthorize(KeyConsts.Admin))
+{
+    <div class="container">
+        <div class="d-flex justify-content-between">
+            <h3 class="text-muted my-3">User List</h3>
+            <div>
+                <button class="btn btn-outline-success mt-2">Add User</button>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>UserName</th>
+                    <th>Role</th>
+                    <th width="200"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model)
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.Username</td>
+                        <td>@user.Role?.Name</td>
+                        <td>
+                            <button class="btn btn-info">&#128065;</button>
+                            <button class="btn btn-warning">&#128393;</button>
+                            <button class="btn btn-danger">&#128465;</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="container">
+        <h2>Access Denied</h2>
+        <h4>you do not have permission to access the page</h4>
+    </div>
+}

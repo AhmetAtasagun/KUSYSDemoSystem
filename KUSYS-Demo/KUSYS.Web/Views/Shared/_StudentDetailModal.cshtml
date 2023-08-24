@@ -1,0 +1,37 @@
+﻿<!------------------ Modal Content ------------------>
+<div class="modal fade" id="studentDetailModal" tabindex="-1" aria-labelledby="studentDetailModalLabel" aria-hidden="true">
+    <!-- Scrollable modal -->
+    <div class="modal-dialog modal-right">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="studentDetailModalLabel">Detail</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="content d-flex justify-content-around">
+                    <div>
+                        <div><strong>Id</strong></div>
+                        <div><strong>FirstName</strong></div>
+                        <div><strong>LastName</strong></div>
+                        <div><strong>BirthDate</strong></div>
+                    </div>
+                    <div>
+                        <div><span id="studentId">studentId</span></div>
+                        <div><span id="studentFirstName">studentFirstName</span></div>
+                        <div><span id="studentLastName">studentLastName</span></div>
+                        <div><span id="studentBirthDate">studentBirthDate</span></div>
+                    </div>
+                    <div>
+                        @*@Html.Raw(courses.Select(s => s.CourseName).CastOfSpans())*@
+                    </div>
+                </div>
+                <select multiple="" class="form-select courses" name="courses" style="height: 150px" disabled></select>
+                <hr />
+                <button type="button" class="btn btn-secondary float-end mx-3" data-bs-dismiss="modal">Close</button>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------ Modal Content End ------------------>

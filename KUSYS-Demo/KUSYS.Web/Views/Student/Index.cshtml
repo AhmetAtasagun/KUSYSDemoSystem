@@ -1,0 +1,60 @@
+﻿@using KUSYS.Core.Models.Response;
+@using KUSYS.Web.Infrastructure;
+@model List<StudentResponse>
+@{
+    ViewData["Title"] = "Students - KUSYS";
+    var isAdmin = Context.GetAuthUser().IsAuthorize(KeyConsts.Admin);
+
+    @*@Html.Raw(courses.Select(s => s.CourseName).CastOfSpans())*@
+}
+
+@await Html.PartialAsync("_StudentDetailModal")
+@await Html.PartialAsync("_StudentEditModal")
+@await Html.PartialAsync("_StudentDeleteModal")
+
+<!------------------ Page Content ------------------>
+<div class="container">
+    <div class="d-flex justify-content-between">
+        <h3 class="text-muted my-3">Student List</h3>
+        <div>
+            @if (isAdmin)
+            {
+                <button class="btn btn-outline-success mt-2" id="studentAdd">Add Student</button>
+            }
+        </div>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>BirthDate</th>
+                <th width="200"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Id</td>
+                    <td>@student.FirstName</td>
+                    <td>@student.LastName</td>
+                    <td>@student.BirthDate</td>
+                    <td>
+                        <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#studentDetailModal" data-itemid="@student.Id">&#128065;</button>
+                        @if (isAdmin)
+                        {
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#studentEditModal" data-itemid="@student.Id">&#128393;</button>
+                            <button class="btn btn-danger studentRemove" data-itemid="@student.Id">&#128465;</button>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<!------------------ Page Content End ------------------>
+@section Scripts {
+    <script src="~/js/studentPageScript.js" asp-append-version="true"></script>
+}

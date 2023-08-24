@@ -1,0 +1,39 @@
+﻿<!------------------ Modal Content ------------------>
+<div class="modal fade" id="studentEditModal" tabindex="-1" aria-labelledby="studentEditModalLabel" aria-hidden="true">
+    <!-- Scrollable modal -->
+    <div class="modal-dialog modal-right">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="studentEditModalLabel">Edit</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="/Student/Update" enctype="multipart/form-data" class="modal-body">
+                <div class="content d-flex justify-content-around">
+                    <div>
+                        @*<div><strong>Id</strong></div>*@
+                        <div><strong>FirstName</strong></div>
+                        <div><strong>LastName</strong></div>
+                        <div><strong>BirthDate</strong></div>
+                    </div>
+                    <div>
+                        <div><input type="hidden" id="studentId" name="StudentId" /></div>
+                        <div><input type="text" id="studentFirstName" name="FirstName" /></div>
+                        <div><input type="text" id="studentLastName" name="LastName" /></div>
+                        <div><input type="date" id="studentBirthDate" name="BirthDate" /></div>
+                    </div>
+                    <div>
+                        @*@Html.Raw(courses.Select(s => s.CourseName).CastOfSpans())*@
+                    </div>
+                </div>
+                <select multiple="" class="form-select courses" name="courses" style="height: 150px"></select>
+                <hr />
+                <div class="float-end">
+                    <input type="submit" class="btn btn-primary" value="Save changes" />
+                </div>
+            </form>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------ Modal Content End ------------------>
